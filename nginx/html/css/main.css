@@ -1,0 +1,197 @@
+/* HTML 요소 */
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+}
+
+main 
+{
+    background-color: #fff;
+    height: 100%;
+}
+
+footer 
+{
+    background-color: darkmagenta;
+    height: 100px;
+}
+
+h1
+{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h3
+{
+    font-size: 3.125rem;
+    margin: 0;
+}
+
+/* header 클래스 */
+/* header 부모 div */
+.header-menu-bar
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, .25);
+}
+
+/* header 자식 div */
+.header-menu-wrap
+{
+    position: relative;
+    margin: 0 auto;
+    max-width: 1280px;
+
+    padding-top: .6875em;
+    padding-bottom: .6875em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 1280px)
+{
+    .header-menu-wrap
+    {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* header nav 스타일 */
+.header-menu-wrap nav a
+{
+    display: inline-block;
+    font-weight: 600;
+    line-height: 3.125em;
+    padding: 0 0.95em;
+}
+.header-menu-wrap a, a:active, a:focus, a:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+.header-menu-wrap .header-menu-border-btn
+{
+    padding: .65em 1.12em;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 2px;
+    font-size: .875rem;
+}
+.header-menu-wrap a.header-menu-border-btn:hover
+{
+    background-color: #4CA186;
+}
+.header-menu-wrap a.header-menu-border-btn:focus
+{
+    background-color: #6C8186;
+}
+
+.header-logo-wrap
+{
+    line-height: 0;
+}
+.kmu-logo-link
+{
+    color: #fff;
+    font-size: 15px;
+}
+.gmc-logo-link
+{
+    color: #fff;
+    font-size: 20px;
+}
+
+/* 랩핑 클래스 */
+.wrapper
+{
+    width: 100%;
+}
+
+.center
+{
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    word-break: keep-all;
+}
+
+.dsp-table
+{
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+}
+.table-v-center
+{
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.describe
+{
+    height: 680px;
+}
+
+.txt-under-deco
+{
+    text-decoration: underline;
+    text-decoration-color: #FFC300;
+}
+
+/* main 클래스 */
+.main-logo
+{
+    position: relative;
+}
+
+.video-bg
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.video-bg video
+{
+    object-fit: cover;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.main-describe-wrap-left
+{
+    box-sizing: border-box;
+    width: 45%;
+}
+.main-describe-text
+{
+    color: #fff;
+}
+.main-describe-wrap-right
+{
+    height: 100%;
+    width: 55%;
+}
+
+/* footer 클래스 */

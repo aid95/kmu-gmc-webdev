@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+    db:
+        container_name: db
+        image: mariadb
+        restart: always
+        environment:
+            MYSQL_DATABASE: kmuwebdev_db
+            MYSQL_USER: kmuwebdev
+            MYSQL_PASSWORD: kmuwebdev
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - ./mysql/data:/var/lib/mysql:rw
+        ports:
+            - "3306:3306"
+    app:
+        container_name: php
+        image: php:fpm
+        depends_on:
+            - db
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./nginx/html:/var/www/html
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        depends_on: 
+            - db
+        ports: 
+            - "8000:80"
+        environment: 
+            PMA_HOST: db
+            PMA_USER: root
+            PMA_PASSWORD: root
+    web:
+        container_name: nginx
+        build:
+            context: ./nginx
+            dockerfile: /mnt/d/repos/kmu-webdev-2020/Dockerfile
+        depends_on:
+            - app
+        volumes:
+            - ./nginx/html:/var/www/html
+            - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - app
+        restart: always
