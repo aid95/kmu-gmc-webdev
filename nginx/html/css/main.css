@@ -17,7 +17,6 @@ main
 
 footer 
 {
-    background-color: darkmagenta;
     height: 100px;
 }
 
@@ -195,3 +194,29 @@ h3
 }
 
 /* footer 클래스 */
+.foot-wrap {
+    height: 100%;
+    width: 1280px;
+    display: table;
+}
+
+.foot-wrap > nav {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.foot-wrap > nav > a {
+    font-size: 14px;
+    padding: 0px 10px 0px 10px;
+}
+
+.foot-wrap > nav > a, a:active, a:focus, a:hover
+{
+    text-decoration: none;
+    color: #a0a0a0;
+}
+
+.foot-wrap .a-align-right {
+    float: right;
+}
