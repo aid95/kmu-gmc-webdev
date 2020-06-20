@@ -1,3 +1,7 @@
+@font-face { font-family: 'LotteMartDream'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff') format('woff'); } @font-face { font-family: 'LotteMartDream'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff'); } @font-face { font-family: 'LotteMartDream'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff') format('woff'); } .lottemartdream * { font-family: 'LotteMartDream', sans-serif; }
+@font-face { font-family: 'NEXON Lv1 Gothic OTF Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'silgothic'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/silgothic.woff') format('woff'); font-weight: normal; font-style: normal; } 
+
 /* HTML 요소 */
 body
 {
@@ -89,10 +93,12 @@ h3
 }
 .header-menu-wrap a.header-menu-border-btn:hover
 {
+    color: #fff;
     background-color: #4CA186;
 }
 .header-menu-wrap a.header-menu-border-btn:focus
 {
+    color: #fff;
     background-color: #6C8186;
 }
 
@@ -192,6 +198,257 @@ h3
     height: 100%;
     width: 55%;
 }
+
+
+/* subpage style */
+.sub-page-header-menu-bar
+{
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 1);
+    position: relative;
+}
+
+.sub-page-header-deco {
+    height: 160px;
+    background: url('/img/header-deco.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+.left-sub-menu-wrap {
+    float: left;
+    width: 20%;
+}
+
+.left-sub-menu > ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.left-sub-menu > ul li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.left-sub-menu > ul li a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'LotteMartDream', 'Courier New', Courier, monospace;
+}
+
+.left-sub-menu > ul li a:hover {
+    color: #FFC300;
+}
+
+.right-sub-content-wrap {
+    float: right;
+    width: 80%;
+    height: 100%;
+}
+
+.right-sub-content {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.content-section-title {
+    font-family: 'LotteMartDream', 'Courier New', Courier, monospace;
+    font-size: 36px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFC300;
+}
+
+.content-section-body {
+    font-family: 'NEXON Lv1 Gothic OTF Light', 'Courier New', Courier, monospace;
+    line-height: 23px;
+    font-size: 16px;
+}
+
+
+/* forum style */
+.forum-page-header-menu-bar {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    border-bottom: 1px solid #D6DBDF;
+}
+
+.forum-header-menu-wrap
+{
+    position: relative;
+    margin: 0 auto;
+    max-width: 1280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 1280px)
+{
+    .header-menu-wrap
+    {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.forum-content {
+    padding-top: 42px;
+    width: 1280px;
+    display: table;
+}
+
+.forum-category-view {
+    display: table-cell;
+    width: 70%;
+}
+
+.forum-category-list {
+    border: 1px solid #D6DBDF;
+    border-radius: 4px;
+    margin-top: 32px;
+}
+
+.forum-category-title {
+    background-color: #4CA186  ;
+}
+
+.forum-category-title p {
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+}
+
+.forum-category {
+    display: table;
+    width: 100%;
+}
+
+.forum-category-info {
+    display: table-row;
+}
+
+.forum-sub-category-title {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+}
+.forum-sub-category-title dt {
+    margin: 0;
+    font-size: 19px;
+}
+.forum-sub-category-title dd {
+    margin: 0;
+    font-size: 13px;
+}
+
+.forum-sub-category-wrap {
+    border-top: 1px solid #D6DBDF;
+    padding: 18px;
+}
+
+.forum-sub-category-count {
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+}
+.forum-sub-category-count dt {
+    text-align: center;
+    font-family: 'silgothic', Arial, Helvetica, sans-serif;
+}
+.forum-sub-category-count p {
+    text-align: center;
+    margin: 0;
+}
+
+.forum-sub-category-recent {
+    display: table-cell;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.forum-sub-category-recent-wrap {
+    display: table;
+}
+
+.forum-user-info {
+    display: table-cell;
+    vertical-align: middle;
+    line-break: anywhere;
+}
+
+.forum-user-info dt {
+    font-size: 13px;
+}
+
+.forum-user-profile {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.forum-user-profile img {
+    border-radius: 1000px;
+    width: 50px;
+    margin-right: 15px;
+}
+
+.forum-article-title {
+
+}
+
+.forum-user-name {
+
+}
+
+.forum-article-date {
+
+}
+
+.forum-alert-list {
+    height: 100%;
+    width: 30%;
+}
+
+.forum-category-view article {
+}
+
+.forum-header-menu-wrap nav a
+{
+    display: inline-block;
+    font-weight: 600;
+    line-height: 3.125em;
+    padding: 0 0.95em;
+}
+.forum-header-menu-wrap a, a:active, a:focus, a:hover
+{
+    text-decoration: none;
+    color: #2C3E50;
+}
+.forum-header-menu-wrap .header-menu-border-btn
+{
+    padding: .65em 1.12em;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 2px;
+    font-size: .875rem;
+}
+.forum-header-menu-wrap a.header-menu-border-btn:hover
+{
+    color: #fff;
+    background-color: #4CA186;
+}
+.forum-header-menu-wrap a.header-menu-border-btn:focus
+{
+    color: #fff;
+    background-color: #6C8186;
+}
+
 
 /* footer 클래스 */
 .foot-wrap {
