@@ -1,31 +1,18 @@
+<?php
+    session_start();
+?>
+
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280, initial-scale=1.0">
-    <title>계명대학교 :: 게임모바일공학과 홈페이지</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+<?php
+include_once("meta_header.html");
+?>
 </head>
 <body>
     <div class="wrapper">
-        <header class="sub-page-header-menu-bar">
-            <div class="header-menu-wrap">
-                <h1 class="header-logo-wrap">
-                    <a href="https://www.kmu.ac.kr/" class="kmu-logo-link">계명대학교</a>
-                    <a href="/" class="gmc-logo-link">게임모바일공학과</a>
-                </h1>
-                <nav>
-                    <a href="">소개</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">연혁</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">모집요강</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">포럼</a>
-                </nav>
-                <a href="" class="header-menu-border-btn">로그인</a>
-            </div>
-        </header>
+        <?php
+        include_once("header.php");
+        ?>
         <main>
             <section class="sub-page-header-deco">
             </section>
@@ -54,20 +41,31 @@
                 </section>
             </div>
         </main>
-        <footer>
-            <div class="center foot-wrap">
-                <nav>
-                    <a href="">소개</a>
-                    <a href="">연혁</a>
-                    <a href="">모집요강</a>
-                    <a href="">포럼</a>
-
-                    <a class="a-align-right" href="">페이스북</a>
-                    <a class="a-align-right" href="">트위터</a>
-                    <a class="a-align-right" href="">인스타그램</a>
-                </nav>
-            </div>
-        </footer>
+        <?php
+        include_once("footer.html");
+        ?>
     </div>
+    <script charset="UTF-8">
+        function set_translation_nav_menu_bar() {
+            // TODO: animation효과로 Fadeout처럼 만들기
+            if (30 < $(window).scrollTop()) {
+                $(".header-menu-bar").css('background-color', 'rgba(0, 0, 0, 1)');
+            } else {
+                $(".header-menu-bar").css('background-color', 'rgba(0, 0, 0, .25)');
+            }
+        }
+
+        $(document).ready(function() {
+            set_translation_nav_menu_bar();
+            $(window).scroll(() => {
+                set_translation_nav_menu_bar();
+            });
+
+            setTimeout(() => { 
+                $(".wrap_controllers").remove();
+                $(".wrap_btn_zoom").remove();
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
