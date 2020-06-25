@@ -18,7 +18,7 @@ if($_SESSION['userid']==null) {
 echo "                <a href='/account/signin' class='header-menu-border-btn'>로그인</a>";
 } else {
 echo "<div>";
-echo "                <a href='/account/logout'>내 정보</a>";
+echo "                <a href='/account/edit'>내 정보</a>";
 echo "  ";
 echo "                <a href='/account/logout'>로그아웃</a>";
 echo "</div>";
