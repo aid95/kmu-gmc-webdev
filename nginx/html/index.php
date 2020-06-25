@@ -1,36 +1,22 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1920, initial-scale=1.0">
-    <title>계명대학교 :: 게임모바일공학과 홈페이지</title>
-    <link rel="stylesheet" href="/css/main.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
-    <script src="https://www.promisejs.org/polyfills/promise-6.1.0.js"></script>
+<?php
+include_once("meta_header.html");
+?>
 </head>
 <body>
     <div class="wrapper">
-        <header class="header-menu-bar">
-            <div class="header-menu-wrap">
-                <h1 class="header-logo-wrap">
-                    <a href="" class="kmu-logo-link">계명대학교</a>
-                    <a href="" class="gmc-logo-link">게임모바일공학과</a>
-                </h1>
-                <nav>
-                    <a href="">소개</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">연혁</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">모집요강</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">포럼</a>
-                </nav>
-                <a href="" class="header-menu-border-btn">로그인</a>
-            </div>
-        </header>
+
+        <!-- header //-->
+        <?php
+        include_once("header.php");
+        ?>
+
         <main>
             <section class="main-logo">
                 <div class="video-bg">
@@ -113,20 +99,11 @@
                 </div>
             </section>
         </main>
-        <footer>
-            <div class="center foot-wrap">
-                <nav>
-                    <a href="">소개</a>
-                    <a href="">연혁</a>
-                    <a href="">모집요강</a>
-                    <a href="">포럼</a>
 
-                    <a class="a-align-right" href="">페이스북</a>
-                    <a class="a-align-right" href="">트위터</a>
-                    <a class="a-align-right" href="">인스타그램</a>
-                </nav>
-            </div>
-        </footer>
+        <?php
+        include_once("footer.html");
+        ?>
+
     </div>
 
     <!-- 필수 자바스크립트 작성 -->
