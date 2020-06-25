@@ -16,6 +16,7 @@
         if ($pass !== $db_pass) {
             echo "<script>window.alert('틀린 비밀번호 입니다!'); history.go(-1);</script>";
         } else {
+            $_SESSION["userpk"] = $row["pk"];
             $_SESSION["userid"] = $row["id"];
             $_SESSION["username"] = $row["nickname"];
             $_SESSION["userlevel"] = $row["perm"];
