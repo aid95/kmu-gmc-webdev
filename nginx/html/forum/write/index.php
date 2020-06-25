@@ -21,7 +21,7 @@
                 <div class="forum-content">
                     <section class="forum-category-view">
                         <h4 style="font-size: 24px;margin: 0;">포럼 게시글 작성</h4>
-                        <form action="insert_article_proc.php" method="POST">
+                        <form action="insert_article_proc.php" method="POST" enctype="multipart/form-data">
                             <div class="article-form-style">
                                 <select name="board" id="board-select">
 <?php
@@ -34,6 +34,7 @@ while ($category_row = mysqli_fetch_array($category_result)) {
                                 </select>
                                 <input name="title" type="text">
                                 <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                                <input type='file' name='myfile'>
                                 <input type="submit">
                             </div>
                         </form>

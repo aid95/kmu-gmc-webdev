@@ -4,7 +4,7 @@
 
     $article_id = $_GET['id'];
 
-    $article_sql = "SELECT title, content, Article.created_date, profile_image, nickname, Account.pk AS uid, Article.pk AS aid, Article.user_pk AS wid FROM Article, Account WHERE Article.pk='$article_id' AND Article.user_pk=Account.pk";
+    $article_sql = "SELECT title, content, Article.created_date, profile_image, nickname, Account.pk AS uid, Article.pk AS aid, Article.user_pk AS wid, Article.photo AS photo FROM Article, Account WHERE Article.pk='$article_id' AND Article.user_pk=Account.pk";
     $article_result = mysqli_query($link, $article_sql);
     $article_row = mysqli_fetch_array($article_result);
 ?>
@@ -34,12 +34,17 @@
                                 <img src="/img/profile/<?=$article_row[3]?>" alt="profile">
                                 <p><?=$article_row[4]?></p>
 <?php
-if ($article_row[5] == $article_row[7]) {
+if ($article_row[5] == $_SESSION["userpk"]) {
 echo "                                <p><a href='/forum/write/edit/?id=".$article_row[6]."'>수정</a> | <a href='/forum/write/delete/?id=".$article_row[6]."'>삭제</a></p>";
 }
 ?>
                             </div>
                             <div class="topic-content">
+<?php
+if ($article_row[8] != '') {
+echo "                                <img style='width: 20%;' src='/img/".$article_row[8]."' alt=''>";
+}
+?>
                                 <p><?=$article_row[1]?></p>
                             </div>
                         </article>
@@ -60,6 +65,14 @@ echo "                            </div>";
 echo "                        </article>";
 }
 ?>
+
+                        <form action="insert_comment_proc.php" method="post">
+                            <article class="comment_input_form">
+                                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                                <input type="submit" value="작성">
+                                <input type="hidden" name="article_id" value="<?=$article_id?>">
+                            </article>
+                        </form>
 
                     </section>
                 </div>

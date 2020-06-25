@@ -5,11 +5,9 @@
                     <a href="/" class="gmc-logo-link">게임모바일공학과</a>
                 </h1>
                 <nav>
+                    <a href="/">홈</a>
+                    <span style="color: #fff;">|</span>
                     <a href="/about.php">소개</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">연혁</a>
-                    <span style="color: #fff;">|</span>
-                    <a href="">모집요강</a>
                     <span style="color: #fff;">|</span>
                     <a href="/forum">포럼</a>
                     <span style="color: #fff;">|</span>
