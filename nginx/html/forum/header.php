@@ -12,6 +12,8 @@
                     <a href="">모집요강</a>
                     <span style="color: #fff;">|</span>
                     <a href="/forum">포럼</a>
+                    <span style="color: #fff;">|</span>
+                    <a href="/forum/write">글쓰기</a>
                 </nav>
 <?php
 if($_SESSION['userid']==null) {
