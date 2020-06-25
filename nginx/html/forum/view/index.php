@@ -4,7 +4,7 @@
 
     $article_id = $_GET['id'];
 
-    $article_sql = "SELECT title, content, Article.created_date, profile_image, nickname FROM Article, Account WHERE Article.pk='$article_id' AND Article.user_pk=Account.pk";
+    $article_sql = "SELECT title, content, Article.created_date, profile_image, nickname, Account.pk AS uid, Article.pk AS aid, Article.user_pk AS wid FROM Article, Account WHERE Article.pk='$article_id' AND Article.user_pk=Account.pk";
     $article_result = mysqli_query($link, $article_sql);
     $article_row = mysqli_fetch_array($article_result);
 ?>
@@ -33,6 +33,11 @@
                             <div class="topic-profile">
                                 <img src="/img/profile/<?=$article_row[3]?>" alt="profile">
                                 <p><?=$article_row[4]?></p>
+<?php
+if ($article_row[5] == $article_row[7]) {
+echo "                                <p><a href='/forum/write/edit/?id=".$article_row[6]."'>수정</a> | <a href='/forum/write/delete/?id=".$article_row[6]."'>삭제</a></p>";
+}
+?>
                             </div>
                             <div class="topic-content">
                                 <p><?=$article_row[1]?></p>
