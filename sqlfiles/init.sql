@@ -33,7 +33,7 @@ CREATE TABLE Article (
     board_pk INT,
     title VARCHAR(60) NOT NULL,
     content TEXT NOT NULL,
-    phto TEXT DEFAULT '',
+    photo TEXT DEFAULT '',
     created_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (pk),
